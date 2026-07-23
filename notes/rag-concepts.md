@@ -11,7 +11,7 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: RAG 核心概念索引：从 RAG、LLM、Embedding 到检索、生成、Grounding、幻觉和评估。
 created: 2026-07-23T05:22:42.184Z
-updated: 2026-07-23T11:57:03.033Z
+updated: 2026-07-23T12:44:23.317Z
 favorite: false
 related:
   - rag
@@ -89,3 +89,6 @@ related:
 
 ## 阅读路径
 先理解 RAG 总体架构，再沿每个模块进入机制、实现和风险节点；最后通过评估节点把知识转成可回归的工程指标。
+
+## 幻觉深入研究
+- [幻觉深入研究](note://rag-hallucination-deep-research)：从事实正确性、证据忠实度、诊断、评估和缓解架构深入研究幻觉。
