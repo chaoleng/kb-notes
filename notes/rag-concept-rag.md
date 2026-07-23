@@ -11,10 +11,13 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: 通过外部知识检索增强大语言模型生成的系统方法，不等同于单纯的向量数据库。
 created: 2026-07-23T05:22:14.272Z
-updated: 2026-07-23T05:22:14.272Z
+updated: 2026-07-23T11:56:38.331Z
 favorite: false
 related:
   - rag-concepts
+  - rag-rag-architecture
+  - rag-rag-workflow
+  - rag-rag-limits
 ---
 
 ## 定义
@@ -31,3 +34,8 @@ Embedding、向量数据库、Retriever 和 Reranker 是检索侧概念；LLM �
 
 ## 误区
 RAG 不是“把所有文档塞进 Prompt”，也不是只安装一个向量数据库。数据处理、检索质量和生成约束同样决定效果。
+
+## 详细分支
+- [RAG 系统架构](note://rag-rag-architecture)：从数据源、索引、检索、上下文编排到模型生成，RAG 是多个组件协作的系统。
+- [RAG 端到端工作流](note://rag-rag-workflow)：理解问题、找证据、组织上下文、生成答案和评估反馈的完整闭环。
+- [RAG 的边界与适用场景](note://rag-rag-limits)：RAG 适合知识查找和基于资料的问答，但不能替代所有数据库查询、计算和业务操作。
