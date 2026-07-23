@@ -9,25 +9,52 @@ tags:
   - Agent
   - 大模型
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
-summary: RAG 不只是给大模型接知识库，而是"理解问题→检索→拼接上下文→生成有据答案"的完整链路；企业用它持续更新知识、可溯源、少幻觉。
+summary: RAG 是理解问题、构建知识、检索证据、增强生成和持续评估优化组成的完整链路。本笔记是 RAG 知识树根节点。
 created: 2026-07-23T04:36:36.967Z
-updated: 2026-07-23T04:36:36.967Z
+updated: 2026-07-23T04:42:50.924Z
 favorite: false
+related:
+  - rag-question-understanding
+  - rag-knowledge-base
+  - rag-retrieval
+  - rag-generation
+  - rag-evaluation
 ---
 
-> 来源：微信公众号「AI认知洞察」 https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+# RAG 运行全流程：知识树主干
 
-很多人觉得，RAG就是"给大模型接一个知识库"，其实远不止这么简单。真正的RAG，更像是一条完整的信息处理链路：先理解用户真正想问什么，再到知识库中检索最相关的内容，把这些信息与原始问题一起交给模型，最后生成有依据、更准确的答案。
+> 来源文章：一图看懂RAG运行全流程
+> https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 
-## 为什么企业选择 RAG
-- 不用频繁重新训练模型，就能持续更新知识
-- 回答基于企业内部资料，减少"一本正经胡说八道"
-- 保留引用来源，结果更易验证、更值得信任
+RAG 不是简单地“给大模型接一个知识库”，而是一条完整的信息处理链路：理解问题 → 构建并检索知识 → 组织上下文 → 生成有依据的答案 → 评估和持续优化。
 
-## 典型场景
-智能客服、企业知识库、法律咨询、金融问答、内部办公助手，背后大多离不开 RAG。
+## 知识树
 
-## 要点
-理解 RAG 运行流程是 AI 应用开发/搭建 Agent 绕不过去的一课。大模型真正的价值不只是"会回答"，而是能基于真实知识持续输出可靠结果。
+- **问题理解**：识别意图、查询改写、多轮上下文。
+  - [rag-question-understanding](note://rag-question-understanding)
+    - [rag-query-rewrite](note://rag-query-rewrite)
+    - [rag-conversation-context](note://rag-conversation-context)
+- **知识库构建**：采集、清洗、切分、Embedding 和索引。
+  - [rag-knowledge-base](note://rag-knowledge-base)
+    - [rag-document-processing](note://rag-document-processing)
+    - [rag-embedding-index](note://rag-embedding-index)
+- **相关知识检索**：向量、关键词、混合检索和重排序。
+  - [rag-retrieval](note://rag-retrieval)
+    - [rag-vector-search](note://rag-vector-search)
+    - [rag-hybrid-rerank](note://rag-hybrid-rerank)
+- **增强生成**：上下文拼接、Prompt、引用和事实依据。
+  - [rag-generation](note://rag-generation)
+    - [rag-context-prompt](note://rag-context-prompt)
+    - [rag-citation-grounding](note://rag-citation-grounding)
+- **评估与持续优化**：质量指标、知识更新、监控和迭代。
+  - [rag-evaluation](note://rag-evaluation)
+    - [rag-quality-evaluation](note://rag-quality-evaluation)
+    - [rag-ops-iteration](note://rag-ops-iteration)
 
-标签：#RAG #知识库 #AI应用 #Agent #大模型
+## 一句话总览
+
+先把问题问清楚，再从新鲜、可追溯的知识中找对证据，最后让模型只基于证据回答，并用评估结果反过来改进数据、检索和生成。
+
+## 使用方式
+
+从任一分支进入都可以回到主干：想了解“为什么答错”，先看检索和评估；想搭建系统，先看知识库构建，再看检索和生成；想降低幻觉，重点看引用与事实依据。
