@@ -11,10 +11,13 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: 根据用户查询从知识库中召回候选片段的组件。
 created: 2026-07-23T05:22:27.110Z
-updated: 2026-07-23T05:22:27.110Z
+updated: 2026-07-23T11:56:49.292Z
 favorite: false
 related:
   - rag-concepts
+  - rag-retriever-lexical-vector
+  - rag-retriever-hybrid
+  - rag-retriever-recall-metrics
 ---
 
 ## 定义
@@ -28,3 +31,8 @@ Retriever 接受查询，返回若干可能包含答案的文档片段及其相�
 
 ## 误区
 检索器只负责找候选，不负责最终回答；如果候选不相关，后续模型再强也可能被错误上下文带偏。
+
+## 详细分支
+- [关键词检索与向量检索](note://rag-retriever-lexical-vector)：BM25 等关键词检索擅长精确术语，向量检索擅长语义相近表达。
+- [混合检索](note://rag-retriever-hybrid)：通过结果融合或加权组合关键词、向量和结构化过滤，兼顾精确匹配与语义匹配。
+- [召回质量指标](note://rag-retriever-recall-metrics)：Recall@K、Precision@K、MRR 和命中排名用于衡量检索是否找到正确证据。
