@@ -11,7 +11,7 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: RAG 是理解问题、构建知识、检索证据、增强生成和持续评估优化组成的完整链路。本笔记是 RAG 知识树根节点。
 created: 2026-07-23T04:36:36.967Z
-updated: 2026-07-23T04:42:50.924Z
+updated: 2026-07-23T05:22:45.828Z
 favorite: false
 related:
   - rag-question-understanding
@@ -19,6 +19,7 @@ related:
   - rag-retrieval
   - rag-generation
   - rag-evaluation
+  - rag-concepts
 ---
 
 # RAG 运行全流程：知识树主干
