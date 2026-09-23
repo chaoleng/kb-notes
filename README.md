@@ -2,6 +2,8 @@
 
 个人知识库：Markdown 笔记 + YAML frontmatter + `note://` 双向链接。全部笔记在 `notes/`，一篇一个概念，文件名即 `id`。
 
+RAG 部分有两个视角，互不复制同一事实：[流程主干](notes/rag.md) 按「问题理解 → 知识库构建 → 检索 → 生成 → 评估」五个阶段组织，[概念总览](notes/rag-concepts.md) 按概念组织并向下展开细节。阶段笔记讲位置、输入输出和失败信号，概念笔记讲定义、参数和取舍。
+
 ## 笔记规范
 
 每篇笔记以 frontmatter 开头，字段固定 10 个、顺序固定：
@@ -9,8 +11,8 @@
 ```yaml
 ---
 version: 1                     # 整数
-id: rag-vector-search          # kebab-case，且必须等于文件名（不含 .md）
-title: 向量检索                 # 非空
+id: rag-vector-ann-index       # kebab-case，且必须等于文件名（不含 .md）
+title: 向量数据库：近似近邻索引  # 非空
 tags:                          # 至少 1 个，不可重复
   - RAG
 source: https://example.com/…  # 非空，来源链接或出处描述
@@ -25,6 +27,13 @@ related:                       # 关联笔记 id，必须存在、不可自引�
 
 正文用 `[标题](note://<id>)` 引用其他笔记，目标必须存在。`related` 是双向的：A 写了 B，B 也要写 A；正文链接不受此约束（主干笔记可以单向指向孙节点）。
 
+正文另有两条硬约束，用来防止模板灌水复发：
+
+- **实质内容 ≥ 150 字**：统计时排除标题行、`>` 摘要引用行和纯导航链接行。只写一句话再拿导航凑篇幅的笔记会被拦下。
+- **同一句话最多出现在 2 篇笔记里**：跨 3 篇及以上的逐字重复句会被判定为样板句。导航请用 `related` 和本页索引，不要在每篇末尾复制同一段「学习提示」。
+
+修改已有笔记时把 `updated` 改成当次时间；`created` 永远保持首次建立的时间。
+
 ## 工具
 
 ```bash
@@ -36,7 +45,7 @@ python3 tools/kb.py index   # 重新生成下面的索引区块
 
 <!-- BEGIN INDEX: 由 tools/kb.py 生成，勿手改 -->
 
-共 71 篇笔记。
+共 66 篇笔记。
 
 ## 知识树
 
@@ -95,10 +104,7 @@ python3 tools/kb.py index   # 重新生成下面的索引区块
       - [向量数据库：索引更新一致性](notes/rag-vector-update-consistency.md) — 新增、修改和删除文档时，原文、向量、元数据和搜索缓存需要保持一致。
   - [RAG：评估与持续优化](notes/rag-evaluation.md) — 从检索质量、答案准确性、引用完整性和系统成本延迟等维度持续改进 RAG。
     - [RAG：知识更新与线上迭代](notes/rag-ops-iteration.md) — 通过增量索引、版本管理、监控和失败样本回流，让知识库持续保持新鲜和可靠。
-    - [RAG：召回率、准确性与幻觉评估](notes/rag-quality-evaluation.md) — 用可重复的问题集评估检索命中、答案正确性、证据忠实度和未知问题处理。
   - [RAG：增强生成](notes/rag-generation.md) — 把原始问题和检索证据组织成模型上下文，生成有依据、可解释的答案。
-    - [RAG：引用与事实依据](notes/rag-citation-grounding.md) — 让回答中的关键结论能够回溯到检索片段和原始文档，提升可验证性。
-    - [RAG：上下文拼接与 Prompt](notes/rag-context-prompt.md) — 将多个检索片段按相关性、来源和长度限制组织成模型可用的上下文。
   - [RAG：知识库构建](notes/rag-knowledge-base.md) — 把原始文档加工成可检索知识的主干，包括采集、清洗、切分、向量化和索引。
     - [RAG：文档采集、清洗与切分](notes/rag-document-processing.md) — 将网页、PDF、Markdown、数据库记录等原始资料转换为边界清晰的知识片段。
     - [RAG：Embedding 与索引](notes/rag-embedding-index.md) — 把知识片段编码成向量并建立索引，让语义相近的问题能够找到相关内容。
@@ -106,8 +112,6 @@ python3 tools/kb.py index   # 重新生成下面的索引区块
     - [RAG：多轮对话上下文](notes/rag-conversation-context.md) — 从历史对话中解析指代、条件和用户偏好，形成当前检索所需的最小上下文。
     - [RAG：查询改写与问题拆分](notes/rag-query-rewrite.md) — 把自然语言问题改造成更适合检索的一个或多个查询，同时保留原始意图。
   - [RAG：相关知识检索](notes/rag-retrieval.md) — 从知识库召回候选片段并排序，向生成模型提供少量高相关上下文。
-    - [RAG：混合检索与重排序](notes/rag-hybrid-rerank.md) — 结合关键词、向量和结构化过滤，再用重排序模型提升候选片段的最终相关性。
-    - [RAG：向量检索](notes/rag-vector-search.md) — 利用向量相似度召回语义相近的知识片段，适合表达方式不同但含义相近的问题。
 
 ### omp 编码 Agent Harness：上下文与记忆管理
 
@@ -133,7 +137,6 @@ python3 tools/kb.py index   # 重新生成下面的索引区块
 | [rag-chunking-overlap](notes/rag-chunking-overlap.md) | 文档切分（Chunking）：片段重叠与上下文连续性 | RAG / 概念 / 细节 |
 | [rag-chunking-parent-child](notes/rag-chunking-parent-child.md) | 文档切分（Chunking）：父子片段检索 | RAG / 概念 / 细节 |
 | [rag-chunking-strategies](notes/rag-chunking-strategies.md) | 文档切分（Chunking）：切分策略 | RAG / 概念 / 细节 |
-| [rag-citation-grounding](notes/rag-citation-grounding.md) | RAG：引用与事实依据 | RAG / 知识库 / AI应用 / Agent / 大模型 |
 | [rag-concept-chunking](notes/rag-concept-chunking.md) | 概念：文档切分（Chunking） | RAG / 概念 / 知识库 / AI应用 / Agent |
 | [rag-concept-embedding](notes/rag-concept-embedding.md) | 概念：Embedding（向量表示） | RAG / 概念 / 知识库 / AI应用 / Agent |
 | [rag-concept-evaluation](notes/rag-concept-evaluation.md) | 概念：RAG 评估 | RAG / 概念 / 知识库 / AI应用 / Agent |
@@ -146,7 +149,6 @@ python3 tools/kb.py index   # 重新生成下面的索引区块
 | [rag-concept-retriever](notes/rag-concept-retriever.md) | 概念：检索器（Retriever） | RAG / 概念 / 知识库 / AI应用 / Agent |
 | [rag-concept-vector-database](notes/rag-concept-vector-database.md) | 概念：向量数据库 | RAG / 概念 / 知识库 / AI应用 / Agent |
 | [rag-concepts](notes/rag-concepts.md) | RAG：概念总览 | RAG / 概念 / 知识库 / AI应用 / Agent |
-| [rag-context-prompt](notes/rag-context-prompt.md) | RAG：上下文拼接与 Prompt | RAG / 知识库 / AI应用 / Agent / 大模型 |
 | [rag-conversation-context](notes/rag-conversation-context.md) | RAG：多轮对话上下文 | RAG / 知识库 / AI应用 / Agent / 大模型 |
 | [rag-document-processing](notes/rag-document-processing.md) | RAG：文档采集、清洗与切分 | RAG / 知识库 / AI应用 / Agent / 大模型 |
 | [rag-embedding-index](notes/rag-embedding-index.md) | RAG：Embedding 与索引 | RAG / 知识库 / AI应用 / Agent / 大模型 |
@@ -169,7 +171,6 @@ python3 tools/kb.py index   # 重新生成下面的索引区块
 | [rag-hallucination-research-factuality](notes/rag-hallucination-research-factuality.md) | 事实正确性与证据忠实度 | 幻觉 / 深入研究 / Factuality / Faithfulness |
 | [rag-hallucination-research-mitigation](notes/rag-hallucination-research-mitigation.md) | 幻觉缓解架构 | 幻觉 / 深入研究 / 缓解 |
 | [rag-hallucination-types](notes/rag-hallucination-types.md) | 幻觉（Hallucination）：幻觉类型 | RAG / 概念 / 细节 |
-| [rag-hybrid-rerank](notes/rag-hybrid-rerank.md) | RAG：混合检索与重排序 | RAG / 知识库 / AI应用 / Agent / 大模型 |
 | [rag-knowledge-base](notes/rag-knowledge-base.md) | RAG：知识库构建 | RAG / 知识库 / AI应用 / Agent / 大模型 |
 | [rag-llm-context-window](notes/rag-llm-context-window.md) | 大语言模型（LLM）：LLM 上下文窗口 | RAG / 概念 / 细节 |
 | [rag-llm-decoding](notes/rag-llm-decoding.md) | 大语言模型（LLM）：LLM 解码与生成参数 | RAG / 概念 / 细节 |
@@ -178,7 +179,6 @@ python3 tools/kb.py index   # 重新生成下面的索引区块
 | [rag-prompt-context-assembly](notes/rag-prompt-context-assembly.md) | Prompt：上下文组装 | RAG / 概念 / 细节 |
 | [rag-prompt-injection-defense](notes/rag-prompt-injection-defense.md) | Prompt：Prompt 注入防护 | RAG / 概念 / 细节 |
 | [rag-prompt-template](notes/rag-prompt-template.md) | Prompt：Prompt 模板结构 | RAG / 概念 / 细节 |
-| [rag-quality-evaluation](notes/rag-quality-evaluation.md) | RAG：召回率、准确性与幻觉评估 | RAG / 知识库 / AI应用 / Agent / 大模型 |
 | [rag-query-rewrite](notes/rag-query-rewrite.md) | RAG：查询改写与问题拆分 | RAG / 知识库 / AI应用 / Agent / 大模型 |
 | [rag-question-understanding](notes/rag-question-understanding.md) | RAG：用户问题理解 | RAG / 知识库 / AI应用 / Agent / 大模型 |
 | [rag-rag-architecture](notes/rag-rag-architecture.md) | RAG（检索增强生成）：RAG 系统架构 | RAG / 概念 / 细节 |
@@ -193,7 +193,6 @@ python3 tools/kb.py index   # 重新生成下面的索引区块
 | [rag-retriever-recall-metrics](notes/rag-retriever-recall-metrics.md) | 检索器（Retriever）：召回质量指标 | RAG / 概念 / 细节 |
 | [rag-vector-ann-index](notes/rag-vector-ann-index.md) | 向量数据库：近似近邻索引 | RAG / 概念 / 细节 |
 | [rag-vector-metadata-filter](notes/rag-vector-metadata-filter.md) | 向量数据库：元数据过滤与权限 | RAG / 概念 / 细节 |
-| [rag-vector-search](notes/rag-vector-search.md) | RAG：向量检索 | RAG / 知识库 / AI应用 / Agent / 大模型 |
 | [rag-vector-update-consistency](notes/rag-vector-update-consistency.md) | 向量数据库：索引更新一致性 | RAG / 概念 / 细节 |
 
 <!-- END INDEX -->

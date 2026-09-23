@@ -221,6 +221,55 @@ def check_graph(notes: List[Note]) -> List[Problem]:
     return problems
 
 
+MIN_SUBSTANCE = 150
+MAX_SENTENCE_REUSE = 2
+MIN_SENTENCE_LEN = 20
+
+
+def substance_lines(body: str) -> List[str]:
+    """正文里真正承载知识的行：剔除标题、引用摘要、表格分隔与纯导航链接行。"""
+    kept: List[str] = []
+    for raw in body.splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or line.startswith(">") or line.startswith("|"):
+            continue
+        if re.match(r"^[-*]?\s*\[[^\]]+\]\(note://[A-Za-z0-9\-]+\)[：:]?\s*$", line):
+            continue
+        kept.append(line)
+    return kept
+
+
+def sentences(body: str) -> Set[str]:
+    """按中文句读切句，去掉 Markdown 链接壳，只保留够长的句子。"""
+    out: Set[str] = set()
+    for line in substance_lines(body):
+        plain = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", line).lstrip("-*0123456789. ")
+        for piece in re.split(r"[。；！？]", plain):
+            piece = piece.strip()
+            if len(piece) >= MIN_SENTENCE_LEN:
+                out.add(piece)
+    return out
+
+
+def check_substance(notes: List[Note]) -> List[Problem]:
+    """堵住模板灌水复发：正文过薄，以及同一句话被复制到多篇。"""
+    problems: List[Problem] = []
+    for note in notes:
+        size = sum(len(re.sub(r"\s", "", line)) for line in substance_lines(note.body))
+        if size < MIN_SUBSTANCE:
+            problems.append(Problem("error", note.rel, f"正文实质内容只有 {size} 字（不含标题/摘要/纯链接行），低于下限 {MIN_SUBSTANCE}"))
+
+    owners: Dict[str, List[str]] = {}
+    for note in notes:
+        for sentence in sentences(note.body):
+            owners.setdefault(sentence, []).append(note.rel)
+    for sentence, files in sorted(owners.items()):
+        if len(files) > MAX_SENTENCE_REUSE:
+            preview = sentence if len(sentence) <= 40 else sentence[:40] + "…"
+            problems.append(Problem("error", sorted(files)[0], f"样板句被 {len(files)} 篇复用：「{preview}」（{', '.join(sorted(files))}）"))
+    return problems
+
+
 def build_tree(notes: List[Note]) -> List[Tuple[str, List[Tuple[int, Note]]]]:
     """按 related 图切分连通分量，每个分量从根节点 BFS 展开成树。"""
     by_slug = {n.slug: n for n in notes}
@@ -330,6 +379,7 @@ def cmd_check(_: argparse.Namespace) -> int:
     for note in notes:
         problems.extend(check_fields(note))
     problems.extend(check_graph(notes))
+    problems.extend(check_substance(notes))
 
     if not [p for p in problems if p.level == "error"]:
         expected = splice_readme(render_index(notes))

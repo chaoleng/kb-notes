@@ -11,13 +11,14 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: 根据用户查询从知识库中召回候选片段的组件。
 created: 2026-07-23T05:22:27.110Z
-updated: 2026-07-23T11:56:49.292Z
+updated: 2026-09-23T10:30:00.000Z
 favorite: false
 related:
   - rag-concepts
   - rag-retriever-lexical-vector
   - rag-retriever-hybrid
   - rag-retriever-recall-metrics
+  - rag-retrieval
 ---
 
 ## 定义

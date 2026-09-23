@@ -11,13 +11,14 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: 把文本或其他对象映射为数值向量，用于计算语义相似度和进行近邻检索。
 created: 2026-07-23T05:22:19.382Z
-updated: 2026-07-23T11:56:42.691Z
+updated: 2026-09-23T10:30:00.000Z
 favorite: false
 related:
   - rag-concepts
   - rag-embedding-similarity
   - rag-embedding-model-selection
   - rag-embedding-version-drift
+  - rag-embedding-index
 ---
 
 ## 定义

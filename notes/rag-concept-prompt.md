@@ -11,13 +11,14 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: 用于约束模型角色、输入格式、证据使用方式和输出格式的指令模板。
 created: 2026-07-23T05:22:32.189Z
-updated: 2026-07-23T11:56:53.907Z
+updated: 2026-09-23T10:30:00.000Z
 favorite: false
 related:
   - rag-concepts
   - rag-prompt-template
   - rag-prompt-context-assembly
   - rag-prompt-injection-defense
+  - rag-generation
 ---
 
 ## 定义

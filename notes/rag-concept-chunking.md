@@ -11,13 +11,14 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: 把长文档划分成适合检索和上下文拼接的知识片段。
 created: 2026-07-23T05:22:24.385Z
-updated: 2026-07-23T11:56:47.050Z
+updated: 2026-09-23T10:30:00.000Z
 favorite: false
 related:
   - rag-concepts
   - rag-chunking-strategies
   - rag-chunking-overlap
   - rag-chunking-parent-child
+  - rag-document-processing
 ---
 
 ## 定义

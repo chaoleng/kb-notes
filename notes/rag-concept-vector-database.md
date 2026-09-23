@@ -11,13 +11,14 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: 存储向量及其元数据并提供近似近邻搜索的数据库或索引系统。
 created: 2026-07-23T05:22:21.986Z
-updated: 2026-07-23T11:56:44.861Z
+updated: 2026-09-23T10:30:00.000Z
 favorite: false
 related:
   - rag-concepts
   - rag-vector-ann-index
   - rag-vector-metadata-filter
   - rag-vector-update-consistency
+  - rag-embedding-index
 ---
 
 ## 定义

@@ -11,13 +11,14 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: 评估检索证据、答案质量、事实忠实度、延迟成本和知识新鲜度的体系。
 created: 2026-07-23T05:22:39.822Z
-updated: 2026-07-23T11:57:00.716Z
+updated: 2026-09-23T10:30:00.000Z
 favorite: false
 related:
   - rag-concepts
   - rag-evaluation-dataset
   - rag-evaluation-metrics
   - rag-evaluation-online-monitoring
+  - rag-evaluation
 ---
 
 ## 定义
