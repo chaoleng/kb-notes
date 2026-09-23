@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 记录查询、召回片段、答案、引用、延迟、成本、用户反馈和失败类型。
 created: 2026-07-23T11:56:34.785Z
 updated: 2026-09-23T10:30:00.000Z

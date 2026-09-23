@@ -8,7 +8,7 @@ tags:
   - AI应用
   - Agent
   - 大模型
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 把自然语言问题改造成更适合检索的一个或多个查询，同时保留原始意图。
 created: 2026-07-23T04:42:14.733Z
 updated: 2026-09-23T10:30:00.000Z

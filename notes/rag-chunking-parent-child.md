@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 用小片段负责精准召回，再取其父章节或邻近片段补充完整上下文。
 created: 2026-07-23T11:55:50.765Z
 updated: 2026-09-23T10:30:00.000Z

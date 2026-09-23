@@ -8,15 +8,17 @@ tags:
   - AI应用
   - Agent
   - 大模型
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: RAG 的入口：识别用户意图、补全查询和处理多轮上下文，决定后续检索方向。
 created: 2026-07-23T04:42:12.347Z
-updated: 2026-09-23T10:30:00.000Z
+updated: 2026-09-23T11:00:00.000Z
 favorite: false
 related:
   - rag
   - rag-query-rewrite
   - rag-conversation-context
+  - rag-query-routing
+  - rag-query-expansion
 ---
 
 ## 在链路中的位置
@@ -33,3 +35,6 @@ related:
 
 ## 失败信号
 检索结果与问题主题明显无关、同一问题换个说法结果差异很大、多轮对话中第二轮开始召回质量骤降——这三种现象通常都不是检索器的锅，而是问题理解没做。
+
+## 展开阅读
+判断走不走检索、路由到哪个库见 [查询路由与意图分类](note://rag-query-routing)；同一意图并行多条查询见 [多路召回与查询扩展](note://rag-query-expansion)。

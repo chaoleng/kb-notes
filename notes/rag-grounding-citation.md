@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 把答案中的关键结论连接到文档、章节、URL 或片段位置。
 created: 2026-07-23T11:56:15.626Z
 updated: 2026-09-23T10:30:00.000Z

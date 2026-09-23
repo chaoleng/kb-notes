@@ -8,7 +8,7 @@ tags:
   - AI应用
   - Agent
   - 大模型
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 把原始问题和检索证据组织成模型上下文，生成有依据、可解释的答案。
 created: 2026-07-23T04:42:34.486Z
 updated: 2026-09-23T10:30:00.000Z

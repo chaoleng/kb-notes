@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: HNSW、IVF 等索引通过牺牲少量精确度换取更快的向量近邻搜索。
 created: 2026-07-23T11:55:38.595Z
 updated: 2026-09-23T10:30:00.000Z

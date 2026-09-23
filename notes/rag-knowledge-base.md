@@ -8,7 +8,7 @@ tags:
   - AI应用
   - Agent
   - 大模型
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 把原始文档加工成可检索知识的主干，包括采集、清洗、切分、向量化和索引。
 created: 2026-07-23T04:42:19.529Z
 updated: 2026-09-23T10:30:00.000Z

@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 候选数量、重排数量和最终保留数量共同决定质量、延迟和模型上下文成本。
 created: 2026-07-23T11:56:03.360Z
 updated: 2026-09-23T10:30:00.000Z

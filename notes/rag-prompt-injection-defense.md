@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 把外部文档当作数据而不是指令，限制工具调用和敏感信息输出。
 created: 2026-07-23T11:56:13.241Z
 updated: 2026-09-23T10:30:00.000Z

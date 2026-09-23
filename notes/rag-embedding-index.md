@@ -8,7 +8,7 @@ tags:
   - AI应用
   - Agent
   - 大模型
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 把知识片段编码成向量并建立索引，让语义相近的问题能够找到相关内容。
 created: 2026-07-23T04:42:24.820Z
 updated: 2026-09-23T10:30:00.000Z

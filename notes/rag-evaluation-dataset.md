@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 由真实问题、参考证据、参考答案和难例组成的可重复测试集。
 created: 2026-07-23T11:56:29.986Z
 updated: 2026-09-23T10:30:00.000Z

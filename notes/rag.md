@@ -8,7 +8,7 @@ tags:
   - AI应用
   - Agent
   - 大模型
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: RAG 是理解问题、构建知识、检索证据、增强生成和持续评估优化组成的完整链路。本笔记是 RAG 知识树根节点。
 created: 2026-07-23T04:36:36.967Z
 updated: 2026-09-23T10:30:00.000Z

@@ -6,7 +6,7 @@ tags:
   - 幻觉
   - 深入研究
   - 诊断
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 沿数据、训练、检索、上下文、生成和验证链路定位错误来源。
 created: 2026-07-23T13:15:29.186Z
 updated: 2026-09-23T10:30:00.000Z

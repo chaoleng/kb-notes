@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 理解问题、找证据、组织上下文、生成答案和评估反馈的完整闭环。
 created: 2026-07-23T11:55:19.416Z
 updated: 2026-09-23T10:30:00.000Z

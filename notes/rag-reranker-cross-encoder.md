@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 让模型同时读取查询和候选片段，直接判断二者的相关性。
 created: 2026-07-23T11:56:00.953Z
 updated: 2026-09-23T10:30:00.000Z

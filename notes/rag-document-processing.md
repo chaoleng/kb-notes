@@ -8,14 +8,15 @@ tags:
   - AI应用
   - Agent
   - 大模型
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 将网页、PDF、Markdown、数据库记录等原始资料转换为边界清晰的知识片段。
 created: 2026-07-23T04:42:22.072Z
-updated: 2026-09-23T10:30:00.000Z
+updated: 2026-09-23T11:00:00.000Z
 favorite: false
 related:
   - rag-knowledge-base
   - rag-concept-chunking
+  - rag-multimodal-ingestion
 ---
 
 ## 采集
@@ -29,3 +30,5 @@ related:
 
 ## 交接给切分
 清洗后的产物应当是带标题路径的结构化文本，切分策略本身见 [Chunking](note://rag-concept-chunking)。验收方式：随机抽 20 条片段，逐条判断脱离原文后是否仍能独立看懂、是否能回溯到具体章节。
+
+表格、扫描件与图表这类非文本素材的具体处理见 [表格、OCR 与多模态入库](note://rag-multimodal-ingestion)。

@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 通过更好的知识更新、混合检索、证据约束、引用检查、拒答策略和回归评估降低风险。
 created: 2026-07-23T11:56:27.662Z
 updated: 2026-09-23T10:30:00.000Z

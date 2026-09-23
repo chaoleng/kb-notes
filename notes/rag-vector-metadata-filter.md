@@ -6,13 +6,14 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 在向量相似搜索前后按租户、用户权限、版本、时间和文档类型过滤候选。
 created: 2026-07-23T11:55:40.965Z
-updated: 2026-09-23T10:30:00.000Z
+updated: 2026-09-23T11:00:00.000Z
 favorite: false
 related:
   - rag-concept-vector-database
+  - rag-multi-tenant
 ---
 
 # 向量数据库：元数据过滤与权限
@@ -30,3 +31,5 @@ post-filter 先取 ANN 的 topK 再筛条件，实现简单，但当命中率只
 
 ## 过滤过窄时的降级
 条件叠满后候选为空，应按预设顺序放宽：先时间范围，再文档类型，最后才调大 topK，权限与租户条件永不参与放宽。把「过滤后候选数」打成指标，空结果率骤升通常意味着某个元数据字段在写入侧换了取值。
+
+按租户做物理或逻辑隔离的选型见 [多租户隔离与分片](note://rag-multi-tenant)。

@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 当多个来源对同一事实不一致时，按版本、时间、权威等级和适用范围进行判断。
 created: 2026-07-23T11:56:20.417Z
 updated: 2026-09-23T10:30:00.000Z

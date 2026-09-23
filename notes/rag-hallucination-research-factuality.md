@@ -7,7 +7,7 @@ tags:
   - 深入研究
   - Factuality
   - Faithfulness
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 区分 Factuality 与 Faithfulness，避免把碰巧正确当成可靠回答。
 created: 2026-07-23T13:15:26.518Z
 updated: 2026-09-23T10:30:00.000Z

@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: Embedding 模型升级会改变向量空间，旧向量与新查询向量可能不再兼容。
 created: 2026-07-23T11:55:36.184Z
 updated: 2026-09-23T10:30:00.000Z

@@ -8,7 +8,7 @@ tags:
   - AI应用
   - Agent
   - 大模型
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 通过增量索引、版本管理、监控和失败样本回流，让知识库持续保持新鲜和可靠。
 created: 2026-07-23T04:42:47.048Z
 updated: 2026-09-23T10:30:00.000Z

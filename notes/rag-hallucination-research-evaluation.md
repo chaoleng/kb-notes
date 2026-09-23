@@ -6,7 +6,7 @@ tags:
   - 幻觉
   - 深入研究
   - 评估
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 使用原子事实、Faithfulness、FActScore、引用指标和拒答质量建立评估闭环。
 created: 2026-07-23T13:15:32.000Z
 updated: 2026-09-23T10:30:00.000Z

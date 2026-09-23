@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 模型一次请求能够接收的输入和输出 token 总量，决定可放入多少检索资料。
 created: 2026-07-23T11:55:24.455Z
 updated: 2026-09-23T10:30:00.000Z

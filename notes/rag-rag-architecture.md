@@ -6,13 +6,14 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 从数据源、索引、检索、上下文编排到模型生成，RAG 是多个组件协作的系统。
 created: 2026-07-23T11:55:16.747Z
-updated: 2026-09-23T10:30:00.000Z
+updated: 2026-09-23T11:00:00.000Z
 favorite: false
 related:
   - rag-concept-rag
+  - rag-cache-strategy
 ---
 
 # RAG（检索增强生成）：RAG 系统架构
@@ -30,3 +31,5 @@ related:
 
 ## 每层的典型失败点
 解析层丢表格或把页眉页脚串进正文，切分层切断语义单元，embedding 层换版未全量重建导致新旧向量空间不一致，检索层过滤条件写错造成零召回，编排层超窗被静默截断。每层单独埋点，只盯端到端准确率定位不到责任方。
+
+三层链路上的缓存位置与失效条件见 [三层缓存策略](note://rag-cache-strategy)。

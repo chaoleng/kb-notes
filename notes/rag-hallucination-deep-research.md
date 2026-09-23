@@ -7,7 +7,7 @@ tags:
   - 概念
   - 细节
   - 深入研究
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 从事实正确性、证据忠实度、形成链路、诊断方法、评估指标和缓解架构深入研究 LLM/RAG 幻觉。
 created: 2026-07-23T12:44:17.029Z
 updated: 2026-09-23T10:30:00.000Z

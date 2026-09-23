@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 常见根因有知识缺失、召回错误、证据冲突、上下文过载和模型过度推断。
 created: 2026-07-23T11:56:25.375Z
 updated: 2026-09-23T10:30:00.000Z

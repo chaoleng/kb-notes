@@ -11,7 +11,7 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: RAG 核心概念索引：从 RAG、LLM、Embedding 到检索、生成、Grounding、幻觉和评估。
 created: 2026-07-23T05:22:42.184Z
-updated: 2026-07-23T12:44:23.317Z
+updated: 2026-09-23T11:00:00.000Z
 favorite: false
 related:
   - rag
@@ -41,11 +41,13 @@ related:
 - [LLM 上下文窗口](note://rag-llm-context-window)：模型一次请求能够接收的输入和输出 token 总量，决定可放入多少检索资料。
 - [LLM 解码与生成参数](note://rag-llm-decoding)：temperature、top_p、最大输出长度等参数共同影响回答的稳定性和多样性。
 - [指令层级与模型约束](note://rag-llm-instruction-hierarchy)：系统指令、用户问题和外部文档之间存在优先级，外部资料不能覆盖系统规则。
+- [长上下文模型与 RAG 的分工](note://rag-long-context)：窗口变大不等于可以取消检索，位置偏置、成本与权限过滤仍要靠 RAG 解决。
 
 ## [Embedding](note://rag-concept-embedding)
 - [向量相似度与距离](note://rag-embedding-similarity)：余弦相似度、点积或欧氏距离用于衡量查询向量与文档向量的接近程度。
 - [Embedding 模型选择](note://rag-embedding-model-selection)：语言覆盖、领域术语、维度、吞吐量和成本决定模型是否适合知识库。
 - [向量版本与语义漂移](note://rag-embedding-version-drift)：Embedding 模型升级会改变向量空间，旧向量与新查询向量可能不再兼容。
+- [微调与领域适配](note://rag-embedding-finetune)：通用模型在领域术语上召回见顶时，用三元组数据微调并全量重算向量。
 
 ## [向量数据库](note://rag-concept-vector-database)
 - [近似近邻索引](note://rag-vector-ann-index)：HNSW、IVF 等索引通过牺牲少量精确度换取更快的向量近邻搜索。
@@ -61,6 +63,8 @@ related:
 - [关键词检索与向量检索](note://rag-retriever-lexical-vector)：BM25 等关键词检索擅长精确术语，向量检索擅长语义相近表达。
 - [混合检索](note://rag-retriever-hybrid)：通过结果融合或加权组合关键词、向量和结构化过滤，兼顾精确匹配与语义匹配。
 - [召回质量指标](note://rag-retriever-recall-metrics)：Recall@K、Precision@K、MRR 和命中排名用于衡量检索是否找到正确证据。
+- [自适应与迭代检索](note://rag-adaptive-retrieval)：按需决定是否检索、是否再检一轮，Self-RAG 与 CRAG 是两种代表做法。
+- [图检索与知识图谱](note://rag-graph-retrieval)：把语料抽成实体关系图并按社区分层摘要，专治跨文档汇总与多跳关系问题。
 
 ## [重排序器（Reranker）](note://rag-concept-reranker)
 - [Cross-Encoder 重排序](note://rag-reranker-cross-encoder)：让模型同时读取查询和候选片段，直接判断二者的相关性。
@@ -71,6 +75,7 @@ related:
 - [Prompt 模板结构](note://rag-prompt-template)：把角色规则、用户问题、检索证据、引用要求和输出格式分成清晰区块。
 - [上下文组装](note://rag-prompt-context-assembly)：按照相关性、来源可信度、时间和互补性排列片段，并控制总 token 预算。
 - [Prompt 注入防护](note://rag-prompt-injection-defense)：把外部文档当作数据而不是指令，限制工具调用和敏感信息输出。
+- [上下文压缩与证据精简](note://rag-context-compression)：在证据入窗前做抽取式或生成式压缩，以信息损失换 token 预算。
 
 ## [Grounding](note://rag-concept-grounding)
 - [引用与来源定位](note://rag-grounding-citation)：把答案中的关键结论连接到文档、章节、URL 或片段位置。
@@ -86,6 +91,7 @@ related:
 - [评估数据集](note://rag-evaluation-dataset)：由真实问题、参考证据、参考答案和难例组成的可重复测试集。
 - [检索与生成指标](note://rag-evaluation-metrics)：检索关注 Recall@K、Precision、MRR；生成关注相关性、完整性、Faithfulness 和引用正确性。
 - [线上监控与反馈闭环](note://rag-evaluation-online-monitoring)：记录查询、召回片段、答案、引用、延迟、成本、用户反馈和失败类型。
+- [成本与延迟预算](note://rag-cost-latency-budget)：把单次问答拆成可相加的成本项，先定预算再反推候选数与模型档位。
 
 ## 阅读路径
 先理解 RAG 总体架构，再沿每个模块进入机制、实现和风险节点；最后通过评估节点把知识转成可回归的工程指标。

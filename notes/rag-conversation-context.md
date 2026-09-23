@@ -8,7 +8,7 @@ tags:
   - AI应用
   - Agent
   - 大模型
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 从历史对话中解析指代、条件和用户偏好，形成当前检索所需的最小上下文。
 created: 2026-07-23T04:42:17.239Z
 updated: 2026-09-23T10:30:00.000Z

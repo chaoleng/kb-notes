@@ -8,7 +8,7 @@ tags:
   - AI应用
   - Agent
   - 大模型
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 从知识库召回候选片段并排序，向生成模型提供少量高相关上下文。
 created: 2026-07-23T04:42:27.223Z
 updated: 2026-09-23T10:30:00.000Z

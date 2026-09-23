@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 包括无依据编造、引用错配、数字错误、实体混淆和把推断说成事实。
 created: 2026-07-23T11:56:22.770Z
 updated: 2026-09-23T10:30:00.000Z

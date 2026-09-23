@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 系统指令、用户问题和外部文档之间存在优先级，外部资料不能覆盖系统规则。
 created: 2026-07-23T11:55:29.130Z
 updated: 2026-09-23T10:30:00.000Z

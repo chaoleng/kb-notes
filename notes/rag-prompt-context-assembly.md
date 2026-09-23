@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 按照相关性、来源可信度、时间和互补性排列片段，并控制总 token 预算。
 created: 2026-07-23T11:56:10.702Z
 updated: 2026-09-23T10:30:00.000Z

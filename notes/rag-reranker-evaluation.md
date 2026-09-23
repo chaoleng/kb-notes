@@ -6,7 +6,7 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: 比较重排前后的正确证据排名和最终答案质量，判断重排是否真的带来收益。
 created: 2026-07-23T11:56:05.776Z
 updated: 2026-09-23T10:30:00.000Z
