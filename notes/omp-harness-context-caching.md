@@ -14,6 +14,7 @@ favorite: false
 related:
   - omp-harness
   - omp-harness-file-io
+  - omp-harness-memory-management
 ---
 
 # omp Harness：上下文缓存与节流

@@ -1,3 +1,21 @@
+---
+version: 1
+id: ai-dev-agent-pipeline-architecture
+title: AI 开发 Agent Pipeline — 架构知识摘要
+tags:
+  - Agent
+  - 架构
+  - AI应用
+  - Pipeline
+  - Rust
+source: ai-dev-agent-pipeline 项目设计文档与 Phase 1 实现（crates/pi-pipeline）
+summary: CLI 形态、可断点续跑、可审计的多智能体开发流水线；SQLite 为流程状态唯一真相源，LLM 只做生成，质量门由确定性 Skill 判定，人工承認不可被替代。
+created: 2026-09-12T02:45:51.000Z
+updated: 2026-09-12T02:45:51.000Z
+favorite: false
+related:
+---
+
 # AI 开发 Agent Pipeline — 架构知识摘要
 
 从 `ai-dev-agent-pipeline` 项目的设计分片（`docs/product-brief.md`、`architecture-design.md`、`runtime-core.md`、`cli-contract.md`、`brownfield-adapters.md`、`security-review.md`、`phase-1-foundation.md`）抽取的主要架构知识。原项目是设计文档 + Rust 实现（`crates/pi-pipeline`），面向日本客户交付场景，强调保密、过程留痕和可审计。本文只保留架构层面的核心决策与契约，不复制全部规范细节。
