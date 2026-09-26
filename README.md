@@ -2,6 +2,8 @@
 
 个人知识库：Markdown 笔记 + YAML frontmatter + `note://` 双向链接。全部笔记在 `notes/`，一篇一个概念，文件名即 `id`。
 
+在线阅读：<https://chaoleng.github.io/kb-notes/>（`main` 推送后由 `.github/workflows/pages.yml` 自动构建，构建时把 `note://<id>` 改写成站内链接）。
+
 RAG 部分有两个视角，互不复制同一事实：[流程主干](notes/rag.md) 按「问题理解 → 知识库构建 → 检索 → 生成 → 评估」五个阶段组织，[概念总览](notes/rag-concepts.md) 按概念组织并向下展开细节。阶段笔记讲位置、输入输出和失败信号，概念笔记讲定义、参数和取舍。
 
 ## 笔记规范
