@@ -11,13 +11,14 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: 对初步召回的候选片段重新计算相关性并排序的组件。
 created: 2026-07-23T05:22:29.699Z
-updated: 2026-07-23T11:56:51.580Z
+updated: 2026-09-23T10:30:00.000Z
 favorite: false
 related:
   - rag-concepts
   - rag-reranker-cross-encoder
   - rag-reranker-topk-latency
   - rag-reranker-evaluation
+  - rag-retrieval
 ---
 
 ## 定义

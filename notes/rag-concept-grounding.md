@@ -11,13 +11,14 @@ tags:
 source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
 summary: 让模型输出的关键结论能够被检索证据支持并回溯到原始来源。
 created: 2026-07-23T05:22:34.550Z
-updated: 2026-07-23T11:56:56.255Z
+updated: 2026-09-23T10:30:00.000Z
 favorite: false
 related:
   - rag-concepts
   - rag-grounding-citation
   - rag-grounding-faithfulness
   - rag-grounding-conflict
+  - rag-generation
 ---
 
 ## 定义

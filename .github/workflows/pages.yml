@@ -1,0 +1,38 @@
+name: pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # note://<id> 只在知识库工具里有意义；站点构建时改写成相对 .md 链接，
+      # 再由 Jekyll 的 jekyll-relative-links 转成 .html。源文件不变。
+      - name: 改写 note:// 链接
+        run: sed -E -i 's#\]\(note://([A-Za-z0-9-]+)\)#](\1.md)#g' notes/*.md
+      - uses: actions/configure-pages@v5
+      - uses: actions/jekyll-build-pages@v1
+      - uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

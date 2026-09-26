@@ -6,10 +6,10 @@ tags:
   - RAG
   - 概念
   - 细节
-source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ
+source: https://mp.weixin.qq.com/s/revpUlIxGWwMWT7289sFpQ（原文框架）+ 工程实践补充
 summary: temperature、top_p、最大输出长度等参数共同影响回答的稳定性和多样性。
 created: 2026-07-23T11:55:26.779Z
-updated: 2026-07-23T11:55:26.779Z
+updated: 2026-09-23T10:30:00.000Z
 favorite: false
 related:
   - rag-concept-llm
@@ -19,11 +19,14 @@ related:
 
 > temperature、top_p、最大输出长度等参数共同影响回答的稳定性和多样性。
 
-## 核心细节
-知识问答通常需要较稳定的输出，温度过高会增加措辞和事实波动。参数不能修复错误检索，必须结合证据质量和回归集调节。
+## 参数各自在改什么
+temperature 缩放 logits，值越大低概率词越容易被选中。top_p 按累积概率截断候选集，top_k 按固定个数截断，两者同时开启时取交集。repetition_penalty 对已出现 token 的 logit 打折以抑制复读。max_tokens 只决定何时停下，不改变分布形状。
 
-## 所属模块
-[大语言模型（LLM）](note://rag-concept-llm)
+## RAG 场景的推荐区间
+知识问答把 temperature 设在 0.1 到 0.3，top_p 设 0.8 到 0.9，top_k 关掉或设 40 以上让 top_p 主导。repetition_penalty 保持 1.0 到 1.05；超过 1.2 会让模型回避原文中反复出现的专有名词和数字，反而改写掉正确内容。
 
-## 学习提示
-先理解该节点解决的问题，再结合父模块观察它在 RAG 链路中的输入、输出和失败边界。
+## 不要把 temperature=0 当万能开关
+贪心解码确实让输出可复现，但它同时放大了模型的先验偏好：证据模糊时，模型会稳定地选那个最像答案的说法，错误也随之固定，靠重跑发现不了。保留 0.1 到 0.2 的温度并采样多次做自洽性比对，更容易暴露不可靠的回答。
+
+## 最大输出长度的隐性代价
+max_tokens 给得过小会在引用列表处截断，让校验器误判为没有引用；给得过大则鼓励模型展开没有证据支撑的补充说明。按任务实测的 p95 输出长度再加 20% 设定比较稳妥。
